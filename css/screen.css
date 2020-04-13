@@ -7,7 +7,7 @@ body {
 
 a, a:hover, a:focus { color: rgb(220,55,85); text-decoration: inherit; }
 a[href]:hover, a[href]:focus { text-decoration: underline; }
-a:visited { color: #9E5765; }
+a:visited { color: #ab1835; }
 
 body > header {
 	background: rgb(200,50,80);
