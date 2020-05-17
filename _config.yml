@@ -15,17 +15,16 @@
 # in the templates via {{ site.myvariable }}.
 title: David M. Robertson
 email: david.m.robertson1@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-        Software Engineer at StarLeaf, formerlly a research student in mathematics. Opinions my own.
+tagline: Software Engineer
+description: Personal profile and notes. Opinions my own.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://DMRobertson.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-github_username:  DMRobertson
+github:
+  repo: DMRobertson/dmrobertson.github.io
 
 # Build settings
 markdown: kramdown
-theme: dmr-jekyll-theme
-# remote-theme: DMRobertson/dmr-jekyll-theme
+theme: jekyll-theme-lanyon
+remote-theme: poole/lanyon 
 plugins:
   - jekyll-feed
 
