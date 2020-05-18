@@ -19,7 +19,7 @@ tagline: Software Engineer
 description: Personal profile and notes. Opinions my own.
 baseurl: "" # the subpath of your site, e.g. /blog
 github:
-  repo: DMRobertson/dmrobertson.github.io
+  repo: https://github.com/DMRobertson/dmrobertson.github.io
 
 # Build settings
 markdown: kramdown

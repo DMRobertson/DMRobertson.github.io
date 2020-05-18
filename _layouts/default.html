@@ -1,47 +1,25 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-
-  {% include head.html %}
-
-  <body class="theme-base-08">
-
-    {% include sidebar.html %}
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href={{ "/" | relative_url }} title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
-        </div>
-      </div>
-
-      <div class="container content">
-        {{ content }}
-      </div>
+<html lang="en-GB">
+{% include head.html %}
+<body>
+<header>
+    <div class="container">
+        <h1><a href={{ "/" | relative_url }} title="Home">{{ site.title }}</a></h1>
+        {% if page.title == "Home" %}
+        <h2>{{ site.tagline }}</h2>
+        {% else %}
+        <h2>{{ page.title }}</h2>
+        {% endif %}
     </div>
+</header>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+<main class="container">
+    <main id="content" class="col-md-8 col-sm-8">
+        {{ content }}
+    </main>
+    <aside class="col-md-4 col-sm-4">{% include sidebar.html %}</aside>
+</main>
 
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
-  </body>
+<footer></footer>
+</body>
 </html>

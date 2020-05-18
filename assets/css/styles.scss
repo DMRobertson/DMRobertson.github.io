@@ -1,8 +1,156 @@
 ---
-# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
-# only main files contain this front matter, not partials.
 ---
+/* TODO Parameterise colours. Maybe have everything based on a single base colour? Or at least a base hue. */
+    /* Structure. Hack to get a footer at the bottom of the viewport. See https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body { height: 100%; }
+body {
+    display: flex;
+    flex-direction: column;
+    > main { flex: 1 0 auto; }
+    > header, > footer { flex-shrink: 0; }
+}
 
- @import "poole";
- @import "syntax";
- @import "lanyon";
+/* body, header, main, footer aesthetics */
+
+html, body { font-size: 16px; }
+
+body {
+    background: rgb(239, 235, 234);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    > header {
+        background: rgb(200, 50, 80);
+        h1 a {
+            color: #eee !important;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h2 {color: #ddd;}
+        h1, h2 {
+            margin: 10px;
+        }
+    }
+    > main {
+        background-color: rgba(255, 255, 255, 0.4);
+        @media (min-width: 768px) {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            clip-path: inset(0px -10px 0px -10px);
+        }
+        @media (min-width: 768px) { font-size: 1em; }
+        @media (min-width: 992px) { font-size: 1.05em; }
+        @media (min-width: 1200px) { font-size: 1.18em; }
+        > main#content {
+            @media (min-width: 768px) { padding-right: 1.5em; }
+        }
+    }
+    > footer {
+        height: 12px;
+        background: rgba(200, 50, 80, 0.2);
+    }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+                    to right,
+                    rgba(200, 50, 80, 0),
+                    rgba(200, 50, 80, 0.4) 10%,
+                    rgba(200, 50, 80, 0.5),
+                    rgba(200, 50, 80, 0.4) 90%,
+                    rgba(200, 50, 80, 0)
+    );
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Sidebar */
+
+address {
+    @media (min-width: 768px) and (max-width: 991px) {font-size: 0.8em;}
+    img {
+        margin-bottom: 1em;
+        border-radius: 2.5%;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 0 !important;
+    }
+    .email ::before {
+        content: "📧 ";
+        font-size: 1rem;
+    }
+    .github, .linkedin {
+        padding-left: 22px;
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+    }
+    .github {background-image: url('/images/github.png');}
+    .linkedin {background-image: url('/images/linkedin.png');}
+}
+
+/* Text styles */
+
+p, dd {text-align: justify;}
+
+p.lead {
+    margin-top: 20px;
+    font-weight: normal;
+    text-align: left;
+    font-size: 1.4em;
+}
+
+dd {
+    margin-left: 1em;
+    margin-bottom: 0.25em;
+}
+
+dt time {
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.software {
+    font-family: monospace;
+}
+
+var sub:last-child {
+    padding-right: 0.25em;
+}
+
+dt small:before {
+    content: '\A';
+}
+
+dt small {
+    white-space: pre;
+    font-weight: normal;
+}
+
+/* http://stackoverflow.com/a/11750985 */
+
+aside ul {
+    padding-left: 20px;
+}
+
+abbr[title] {
+    /* Nicked from bootstrap 4 beta */
+    text-decoration: underline;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+    cursor: help;
+    border-bottom: 0;
+}
+
+a, a:hover, a:focus {
+    color: rgb(220, 55, 85);
+    text-decoration: inherit;
+}
+
+a[href]:hover, a[href]:focus {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #ab1835;
+}
+
