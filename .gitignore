@@ -1,2 +1,3 @@
 #Ignore gedit's backup files
 *~
+.idea
