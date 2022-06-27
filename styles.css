@@ -3,7 +3,7 @@ body {
     margin: 25px auto;
     padding: 0 10px;
     font-size: 16px;
-    line-height: 1.5em;
+    line-height: 1.52em;
     max-width: 650px;
 
     font-family: system-ui, sans-serif;
@@ -17,7 +17,6 @@ dt::after {
 /* Add a glyph to distinguish internal links. */
 a[href^="#"]::after {
     content: "⤦";
-    text-decoration: none;
     display: inline-block;
     margin-left: 0.1em;
 }
@@ -49,6 +48,7 @@ img {
  - dark mode light mode
  - make the different sections have different colours or something idk
  */
+
 @media (prefers-color-scheme: dark) {
     body {
         background: #222;
@@ -66,4 +66,10 @@ img {
     li.github {
         list-style-image: url("images/github_light.svg");
     }
+}
+
+@media screen and not (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
