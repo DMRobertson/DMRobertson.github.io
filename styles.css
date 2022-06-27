@@ -14,7 +14,8 @@ dt::after {
     content: ".";
 }
 
-/* Add a glyph to distinguish internal links. */
+/* Add a glyph to distinguish internal links.
+   Inline block so the arrow doesn't get underlined. */
 a[href^="#"]::after {
     content: "⤦";
     display: inline-block;
@@ -45,8 +46,11 @@ img {
 }
 
 /* TODO:
- - dark mode light mode
  - make the different sections have different colours or something idk
+ - link colours that are colour-blind friendly
+ - finish prose
+ - on desktop: two-column layout?
+ - rounded corners on the image or a frame idk
  */
 
 @media (prefers-color-scheme: dark) {
