@@ -22,6 +22,29 @@ a[href^="#"]::after {
     margin-left: 0.1em;
 }
 
+address {
+    font-style: normal;
+}
+
+address ul {
+}
+
+li.email {
+    list-style-type: "📧  ";
+}
+
+li.github {
+    list-style-image: url("images/github.svg");
+}
+
+li.linkedin {
+    list-style-image: url("images/linkedin.svg");
+}
+
+img {
+    max-width: 100%;
+}
+
 /* TODO:
  - dark mode light mode
  - make the different sections have different colours or something idk
