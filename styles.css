@@ -2,7 +2,6 @@
     For the "measure" system, see https://every-layout.dev/rudiments/axioms/
  */
 :root {
-    --measure: 60ch;
     font-size: 120%;
     line-height: 1.5;
     font-family: system-ui, sans-serif;
@@ -14,10 +13,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
 }
 
-* {
-    max-inline-size: var(--measure);
-}
-
 body {
     display: flex;
     flex-wrap: wrap;
@@ -26,10 +21,19 @@ body {
     gap: 1rem;
 }
 
+aside, main {
+    padding: 0 1rem 1rem 1rem;
+}
+
+summary {
+    cursor: pointer;
+}
+
 aside {
     flex-basis: 16rem;
     background: rgb(245,245,238);
-    padding: 0.5rem 1rem;
+    padding: 0 1rem 1rem 1rem;
+    font-size: 95%;
 }
 
 aside img {
@@ -41,20 +45,11 @@ aside img {
 }
 
 main {
-    flex-basis: var(--measure);
-    padding: 0.5rem 1rem;
+    flex-basis: 60ch;
 }
 
-html,
-body,
-div,
-header,
-nav,
-main,
-footer,
-aside
-{
-    max-inline-size: none;
+summary h2 {
+    display: inline;
 }
 
 dt {
