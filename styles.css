@@ -1,0 +1,63 @@
+/*
+    For the "measure" system, see https://every-layout.dev/rudiments/axioms/
+ */
+:root {
+    --measure: 60ch;
+    font-size: 120%;
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    box-sizing: border-box;
+    color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
+
+* {
+    max-inline-size: var(--measure);
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
+    gap: 1rem;
+}
+
+aside {
+    flex-basis: 16rem;
+    background: rgb(245,245,238);
+    padding: 0.5rem 1rem;
+}
+
+aside img {
+    display: inline-block;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+main {
+    flex-basis: var(--measure);
+    padding: 0.5rem 1rem;
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+aside
+{
+    max-inline-size: none;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 1ex;
+}
