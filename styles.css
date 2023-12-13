@@ -1,12 +1,35 @@
-/*
-    For the "measure" system, see https://every-layout.dev/rudiments/axioms/
- */
 :root {
     font-size: 120%;
     line-height: 1.5;
     font-family: system-ui, sans-serif;
     box-sizing: border-box;
-    color: #222;
+
+    --text-color: #383838;
+    --anchor-color: blue;
+    --anchor-visited-color: purple;
+    --bg-color: #ffffff;
+    --bg-color-accent: rgb(245,245,238);
+    --image-border-color: #ddd;
+    color: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #eee;
+        --bg-color: #11130f;
+        --bg-color-accent: #0e0d0b;
+        --anchor-color: #76abff;
+        --anchor-visited-color: #9e6fff;
+        --image-border-color: #888;
+    }
+}
+
+a {
+    color: var(--anchor-color);
+}
+
+a:visited {
+    color: var(--anchor-visited-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,6 +42,8 @@ body {
     margin: 0;
     justify-content: center;
     gap: 1rem;
+    background-color: var(--bg-color);
+    min-height: 100vmin;
 }
 
 aside, main {
@@ -31,7 +56,7 @@ summary {
 
 aside {
     flex-basis: 16rem;
-    background: rgb(245,245,238);
+    background: var(--bg-color-accent);
     padding: 0 1rem 1rem 1rem;
     font-size: 95%;
 }
@@ -39,8 +64,8 @@ aside {
 aside img {
     display: inline-block;
     padding: 4px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--bg-color);
+    border: 1px solid var(--image-border-color);
     border-radius: 4px;
 }
 
